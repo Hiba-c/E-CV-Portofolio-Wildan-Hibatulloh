@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wildan Studio - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0F5B66',
+            'primary-dark': '#0C4750',
+            'primary-light': '#E8F4F5',
+            'primary-tint': '#D7ECEE',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#F8FAF9] dark:bg-[#0B1315] text-[#2C3E50] dark:text-slate-100 font-sans antialiased selection:bg-primary selection:text-white transition-colors duration-300">
+
+  <!-- ========================================== -->
+  <!-- 1. NAVBAR                                  -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 bg-[#F8FAF9]/95 dark:bg-[#0B1315]/95 backdrop-blur-md border-b border-gray-100 dark:border-[#1A2E33] transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo Brand Modern -->
+<a href="#beranda" class="flex items-center gap-2.5 group">
+  <div class="flex items-center">
+    <!-- Gambar untuk Mode Terang (Light Mode) -->
+    <img src="/src/assets/images/wilba_ht.jpg" alt="Wilba Studio" class="h-12 sm:h-14 w-auto block dark:hidden group-hover:opacity-90 transition-opacity" />
+
+    <!-- Gambar untuk Mode Gelap (Dark Mode) -->
+    <img src="/src/assets/images/wilba_pth.jpg" alt="Wilba Studio" class="h-12 sm:h-14 w-auto hidden dark:block group-hover:opacity-90 transition-opacity" />
+  </div>
+</a>
+
+      <!-- Desktop Nav & Theme Toggle -->
+      <div class="flex items-center space-x-6">
+        <nav class="hidden md:flex items-center space-x-7 text-xs font-bold tracking-widest text-gray-600 dark:text-slate-300">
+          <a href="#beranda" class="text-primary dark:text-[#2DD4BF] pb-1 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary dark:after:bg-[#2DD4BF]">BERANDA</a>
+          <a href="#tentang-saya" class="hover:text-primary dark:hover:text-[#2DD4BF] transition-colors pb-1">TENTANG SAYA</a>
+          <a href="#proyek" class="hover:text-primary dark:hover:text-[#2DD4BF] transition-colors pb-1">PROYEK</a>
+          <a href="#pelatihan" class="hover:text-primary dark:hover:text-[#2DD4BF] transition-colors pb-1">PELATIHAN</a>
+          <a href="#kontak" class="hover:text-primary dark:hover:text-[#2DD4BF] transition-colors pb-1">KONTAK</a>
+        </nav>
+
+        <!-- Theme Toggle Button -->
+        <button id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle theme" class="flex items-center gap-2 p-2 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-[#152529] dark:hover:bg-[#1c3338] text-gray-700 dark:text-teal-300 border border-gray-200 dark:border-[#22393F] transition-all cursor-pointer shadow-xs">
+          <i id="themeIcon" class="fa-solid fa-moon text-primary dark:text-amber-400"></i>
+          <span id="themeText" class="text-[11px] font-bold tracking-wide uppercase pr-1">DARK</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 2. HERO SECTION                            -->
+  <!-- ========================================== -->
+  <section id="beranda" class="pt-8 pb-14 md:py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
+        <!-- Teks Hero Kiri -->
+        <div class="md:col-span-7 space-y-4 lg:space-y-5 animate-fade-up">
+          <!-- Sub-bab Header tanpa strip -->
+          <div>
+            <span class="text-[11px] sm:text-xs font-extrabold tracking-[0.25em] text-primary dark:text-[#2DD4BF] uppercase block">
+              WELCOME TO MY PORTFOLIO
+            </span>
+          </div>
+
+          <div class="space-y-0.5">
+            <h1 class="text-4xl sm:text-5xl md:text-[34px] lg:text-[54px] font-extrabold tracking-tight text-primary dark:text-[#2DD4BF] leading-[1.08]">
+              WILDAN<br />HIBATULLOH
+            </h1>
+            <p class="text-xs md:text-[11px] lg:text-sm font-bold tracking-[0.2em] text-gray-700 dark:text-slate-300 uppercase pt-1 lg:pt-2">
+              INFORMATION SYSTEMS STUDENT
+            </p>
+          </div>
+
+          <p class="text-[13px] md:text-[12.5px] lg:text-[14.5px] leading-relaxed text-gray-600 dark:text-slate-300 max-w-xl">
+            Saya adalah mahasiswa Sistem Informasi yang memiliki minat dalam teknologi, desain, dan pengembangan solusi digital. Berfokus pada pembelajaran, pengalaman proyek, dan kolaborasi untuk terus berkembang di bidang teknologi informasi.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 lg:gap-4 pt-2 lg:pt-3">
+            <a href="#proyek" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark dark:bg-[#137482] dark:hover:bg-primary text-white text-[11px] lg:text-xs font-bold tracking-wider uppercase px-5 lg:px-6 py-2.5 lg:py-3 rounded-full transition-all shadow-sm">
+              <span>VIEW PROJECTS</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <a href="#kontak" class="inline-flex items-center gap-2 border-2 border-primary dark:border-[#2DD4BF] hover:bg-primary/5 dark:hover:bg-[#2DD4BF]/10 text-primary dark:text-[#2DD4BF] text-[11px] lg:text-xs font-bold tracking-wider uppercase px-5 lg:px-6 py-2 lg:py-2.5 rounded-full transition-all">
+              <span>SEND MESSAGE</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gambar Profil & Dekorasi Melengkung (Tetap Satu Baris di Tablet) -->
+        <div class="md:col-span-5 flex justify-center md:justify-end relative animate-fade-in">
+          <div class="relative w-[280px] sm:w-[320px] md:w-[240px] lg:w-[380px] aspect-[4/5] flex items-end justify-center">
+            <div class="absolute inset-0 bg-[#D7ECEE] dark:bg-[#143339] rounded-[48%_52%_42%_58%/46%_48%_52%_54%] scale-95 -z-10 transform translate-x-2 translate-y-2 opacity-90 shadow-lg transition-colors"></div>
+            <div class="relative w-full h-full rounded-b-3xl overflow-hidden flex items-end justify-center">
+              <img src="/src/assets/images/wildan_hero_portrait_1792139929707.jpg" alt="Wildan Hibatulloh" class="w-full h-full object-cover object-top" />
+              <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#F8FAF9]/80 dark:from-[#0B1315]/90 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. ABOUT & SKILLS SECTION (2 KOLOM)        -->
+  <!-- ========================================== -->
+  <section id="tentang-saya" class="py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Kolom Kiri: About Me -->
+        <div class="lg:col-span-7 space-y-4">
+          <!-- Sub-bab Header tanpa strip -->
+          <div class="mb-2">
+            <h2 className="text-xs font-extrabold tracking-[0.25em] text-primary dark:text-[#2DD4BF] uppercase">ABOUT ME</h2>
+          </div>
+
+          <div class="bg-white dark:bg-[#121E21] rounded-2xl p-6 sm:p-7 border border-gray-100 dark:border-[#1E3237] shadow-sm space-y-6 transition-colors">
+            <div class="flex flex-col sm:flex-row gap-5 items-start">
+              <div class="w-28 sm:w-36 h-36 sm:h-44 rounded-xl overflow-hidden shrink-0 shadow-sm bg-primary-light dark:bg-[#152529]">
+                <img src="/src/assets/images/wildan_hero_portrait_1792139929707.jpg" alt="Wildan" class="w-full h-full object-cover object-top" />
+              </div>
+              <div class="space-y-2 flex-1">
+                <p class="text-xs font-semibold text-gray-500 dark:text-slate-400">Hi, I'm</p>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-primary dark:text-[#2DD4BF] tracking-tight">WILDAN HIBATULLOH</h3>
+                <p class="text-[13px] leading-relaxed text-gray-600 dark:text-slate-300 pt-1">
+                  Saya adalah mahasiswa Sistem Informasi yang memiliki minat dalam teknologi, desain, dan pengembangan solusi digital. Saya percaya bahwa teknologi dapat menjadi alat untuk menciptakan dampak positif, dan saya terus belajar untuk memberikan kontribusi terbaik.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kotak Info Pendidikan & Lokasi -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+              <div class="bg-[#FAFBFB] dark:bg-[#162529] rounded-xl p-3.5 border border-gray-100 dark:border-[#22393F] flex items-center gap-3 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-primary/10 dark:bg-[#2DD4BF]/15 flex items-center justify-center text-primary dark:text-[#2DD4BF] shrink-0">
+                  <i class="fa-solid fa-graduation-cap text-base"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-gray-800 dark:text-slate-100">S1+ Sistem Informasi</p>
+                  <p class="text-[11px] text-gray-500 dark:text-slate-400">Universitas Bina Sarana Informatika</p>
+                  <p class="text-[10px] text-gray-400 dark:text-slate-500">2024 - Sekarang</p>
+                </div>
+              </div>
+
+              <div class="bg-[#FAFBFB] dark:bg-[#162529] rounded-xl p-3.5 border border-gray-100 dark:border-[#22393F] flex items-center gap-3 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-primary/10 dark:bg-[#2DD4BF]/15 flex items-center justify-center text-primary dark:text-[#2DD4BF] shrink-0">
+                  <i class="fa-solid fa-location-dot text-base"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-gray-800 dark:text-slate-100">Yogyakarta</p>
+                  <p class="text-[11px] text-gray-500 dark:text-slate-400">Indonesia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Skills -->
+        <div class="lg:col-span-5 space-y-4">
+          <!-- Sub-bab Header tanpa strip -->
+          <div class="mb-2">
+            <h2 class="text-xs font-extrabold tracking-[0.25em] text-primary dark:text-[#2DD4BF] uppercase">SKILLS</h2>
+          </div>
+
+          <div class="bg-white dark:bg-[#121E21] rounded-2xl p-6 border border-gray-100 dark:border-[#1E3237] shadow-sm space-y-6 transition-colors">
+            <!-- Desain & Produksi -->
+            <div>
+              <h4 class="text-[11px] font-extrabold tracking-wider text-gray-700 dark:text-slate-200 uppercase mb-3">DESAIN &amp; PRODUKSI</h4>
+              <div class="grid grid-cols-5 gap-2 text-center">
+                <div class="flex flex-col items-center gap-1.5">
+                <div class="w-11 h-11 rounded-lg overflow-hidden flex items-center justify-center shadow-sm">
+                  <img src="/src/assets/images/PixelLab.png" alt="PixelLab" class="w-full h-full object-cover" />
+                </div>
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">PixelLab</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                <div class="w-11 h-11 rounded-lg overflow-hidden flex items-center justify-center shadow-sm">
+                  <img src="/src/assets/images/canva.png" alt="PixelLab" class="w-full h-full object-cover" />
+                </div>
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">Canva</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                  <div class="w-11 h-11 rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-md border border-gray-100 dark:border-slate-800">
+                    <img src="/src/assets/images/capcut.png" alt="Capcut" class="w-full h-full object-cover" />
+                  </div>
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">Capcut</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                <div class="w-11 h-11 rounded-lg overflow-hidden flex items-center justify-center shadow-sm">
+                  <img src="/src/assets/images/snapseed.png" alt="PixelLab" class="w-full h-full object-cover" />
+                </div>
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">Snapseed</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                  <div class="w-11 h-11 rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-md border border-gray-100 dark:border-slate-800">
+                    <img src="/src/assets/images/am.png" alt="Capcut" class="w-full h-full object-cover" />
+                  </div>
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">Alight Motion</span>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pengembangan -->
+            <div>
+              <h4 class="text-[11px] font-extrabold tracking-wider text-gray-700 dark:text-slate-200 uppercase mb-3">PENGEMBANGAN</h4>
+              <div class="grid grid-cols-4 gap-y-4 gap-x-2 text-center">
+                <div class="flex flex-col items-center gap-1.5">
+                  <div class="w-11 h-11 rounded-lg bg-red-50 dark:bg-red-950/40 text-red-500 flex items-center justify-center shadow-sm text-base"><i class="fa-brands fa-laravel"></i></div>
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">Laravel</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                  <div class="w-11 h-11 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-cyan-700 flex items-center justify-center shadow-sm text-base"><i class="fa-solid fa-database"></i></div>
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">MySQL</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                  <div class="w-11 h-11 rounded-lg bg-cyan-50 dark:bg-cyan-950/40 text-sky-500 flex items-center justify-center shadow-sm text-base"><i class="fa-solid fa-wind"></i></div>
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">TailwindCSS</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                  <div class="w-11 h-11 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-slate-100 flex items-center justify-center shadow-sm text-base"><i class="fa-brands fa-github"></i></div>
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">GitHub</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Soft -->
+            <div>
+              <h4 class="text-[11px] font-extrabold tracking-wider text-gray-700 dark:text-slate-200 uppercase mb-3">SOFT</h4>
+              <div class="grid grid-cols-4 gap-y-4 gap-x-2 text-center">
+                <div class="flex flex-col items-center gap-1.5">
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">Kerja sama dalam tim</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                  <span class="text-[10px] text-gray-600 dark:text-slate-400">Indonesia & Jawa</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. EDUCATION & EXPERIENCE (2 KOLOM)        -->
+  <!-- ========================================== -->
+  <section class="py-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Education Timeline -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl p-6 sm:p-7 border border-gray-100 dark:border-[#1E3237] shadow-sm transition-colors">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
+              <i class="fa-solid fa-graduation-cap text-xs"></i>
+            </div>
+            <h3 class="text-xs font-extrabold tracking-[0.2em] text-primary dark:text-[#2DD4BF] uppercase">EDUCATION</h3>
+          </div>
+
+          <div class="relative pl-6 space-y-6 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-primary/30 dark:before:bg-[#2DD4BF]/30">
+            <div class="relative">
+              <div class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-primary dark:bg-[#2DD4BF] ring-4 ring-primary-light dark:ring-[#173036]"></div>
+              <span class="text-[11px] text-gray-400 dark:text-slate-500 block mb-0.5">2024 - Sekarang</span>
+              <h4 class="text-[13px] font-bold text-gray-800 dark:text-slate-100">S1+ Sistem Informasi</h4>
+              <p class="text-xs text-gray-500 dark:text-slate-400">Universitas Bina Sarana Informatika</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-primary dark:bg-[#2DD4BF] ring-4 ring-primary-light dark:ring-[#173036]"></div>
+              <span class="text-[11px] text-gray-400 dark:text-slate-500 block mb-0.5">2020 - 2023</span>
+              <h4 class="text-[13px] font-bold text-gray-800 dark:text-slate-100">Pesantren Tidar</h4>
+              <p class="text-xs text-gray-500 dark:text-slate-400">Paket C</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-primary dark:bg-[#2DD4BF] ring-4 ring-primary-light dark:ring-[#173036]"></div>
+              <span class="text-[11px] text-gray-400 dark:text-slate-500 block mb-0.5">2020 - 2023</span>
+              <h4 class="text-[13px] font-bold text-gray-800 dark:text-slate-100">PPTQ Luqman Al-hakim</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl p-6 sm:p-7 border border-gray-100 dark:border-[#1E3237] shadow-sm transition-colors">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
+              <i class="fa-solid fa-briefcase text-xs"></i>
+            </div>
+            <h3 class="text-xs font-extrabold tracking-[0.2em] text-primary dark:text-[#2DD4BF] uppercase">EXPERIENCE</h3>
+          </div>
+
+          <div class="relative pl-6 space-y-6 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-primary/30 dark:before:bg-[#2DD4BF]/30">
+            <div class="relative">
+              <div class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-primary dark:bg-[#2DD4BF] ring-4 ring-primary-light dark:ring-[#173036]"></div>
+              <h4 class="text-[13px] font-bold text-gray-800 dark:text-slate-100">Freelance Content Creator</h4>
+              <span class="text-[11px] text-gray-400 dark:text-slate-500 block mb-1">2024 - Sekarang</span>
+              <p class="text-xs text-gray-500 dark:text-slate-400">Membuat desain, Template capcut, dan Vidio.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-primary dark:bg-[#2DD4BF] ring-4 ring-primary-light dark:ring-[#173036]"></div>
+              <h4 class="text-[13px] font-bold text-gray-800 dark:text-slate-100">Pramuniaga</h4>
+              <span class="text-[11px] text-gray-400 dark:text-slate-500 block mb-1">2023</span>
+              <p class="text-xs text-gray-500 dark:text-slate-400">Mengantar makanan dan membantu kelancaran pelayanan pelanggan.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-primary dark:bg-[#2DD4BF] ring-4 ring-primary-light dark:ring-[#173036]"></div>
+              <h4 class="text-[13px] font-bold text-gray-800 dark:text-slate-100">Admin Instagram AAD</h4>
+              <span class="text-[11px] text-gray-400 dark:text-slate-500 block mb-1">2023 - 2024</span>
+              <p class="text-xs text-gray-500 dark:text-slate-400">Mengelola konten media sosial, berinteraksi dengan audiens.</p>
+            </div>
+              <div class="relative">
+              <div class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-primary dark:bg-[#2DD4BF] ring-4 ring-primary-light dark:ring-[#173036]"></div>
+              <h4 class="text-[13px] font-bold text-gray-800 dark:text-slate-100">Devisi Acara LDM</h4>
+              <span class="text-[11px] text-gray-400 dark:text-slate-500 block mb-1">2023 - 2024</span>
+              <p class="text-xs text-gray-500 dark:text-slate-400">Merencanakan, mengoordinasikan, berkolaborasi, berkomunikasi, dan mengevaluasi keberhasilan acara dakwah komunitas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. MY PROJECTS                             -->
+  <!-- ========================================== -->
+  <section id="proyek" class="py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Sub-bab Header tanpa strip -->
+      <div class="mb-6">
+        <h2 class="text-xs font-extrabold tracking-[0.25em] text-primary dark:text-[#2DD4BF] uppercase">MY PROJECTS</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Project 1 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="KAH Tour" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">KAH - Langit Tour &amp; ERP</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">Sistem informasi pariwisata dan manajemen reservasi berbasis web.</p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-4 mt-auto">
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">Laravel</span>
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">MySQL</span>
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">TailwindCSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80" alt="Mobile App" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Mobile App Design</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">Desain UI/UX aplikasi mobile untuk mendukung proses pembelajaran.</p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-4 mt-auto">
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">Figma</span>
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">UI/UX</span>
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Social Media" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Sosial Media Content</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">Video dan foto untuk kebutuhan promosi, edukasi, dan storytelling.</p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-4 mt-auto">
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">Premiere Pro</span>
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">CapCut</span>
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">Content</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=800&q=80" alt="Branding" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Branding &amp; Visual Identity</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">Desain logo, feed Instagram, dan materi promosi.</p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-4 mt-auto">
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">Illustrator</span>
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">Photoshop</span>
+              <span class="text-[10px] font-semibold bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md">Branding</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. PELATIHAN & SERTIFIKASI (KARTU MANDIRI) -->
+  <!-- ========================================== -->
+  <section id="pelatihan" class="py-12">
+    <div class="max-w-6xl mx-auto px-6 space-y-6">
+      <!-- Sub-bab Header tanpa strip -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <h2 class="text-xs font-extrabold tracking-[0.25em] text-primary dark:text-[#2DD4BF] uppercase">PELATIHAN &amp; SERTIFIKASI</h2>
+        </div>
+      </div>
+
+      <!-- Grid Kartu Pelatihan / Sertifikat Mandiri -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Cert 1 -->
+        <div onclick="openCertModal('BNSP Certified Junior Web Developer', 'Badan Nasional Sertifikasi Profesi (BNSP)', '2023', 'BNSP-JWD-77491-2023', 'Standar Kompetensi Kerja Nasional Indonesia (SKKNI). Memvalidasi keahlian perancangan web, integrasi database MySQL, clean code, dan deployment.', ['HTML5', 'CSS3', 'JavaScript', 'REST API', 'MySQL', 'Git'])" class="bg-white dark:bg-[#121E21] hover:bg-[#FDFEFE] dark:hover:bg-[#152529] rounded-2xl p-5 border border-gray-100 dark:border-[#1E3237] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 dark:bg-[#2DD4BF]/15 text-primary dark:text-[#2DD4BF] flex items-center justify-center">
+                <i class="fa-solid fa-award text-lg"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-full">Web Dev</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-gray-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-[#2DD4BF] transition-colors leading-snug">
+              BNSP Certified Junior Web Developer
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-slate-400 mt-2">Badan Nasional Sertifikasi Profesi (BNSP)</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100 dark:border-[#1E3237] flex items-center justify-between text-xs">
+            <span class="text-[11px] font-semibold text-gray-400 dark:text-slate-500"><i class="fa-regular fa-calendar mr-1"></i> 2023</span>
+            <span class="font-bold text-primary dark:text-[#2DD4BF] text-[11px]">Detail Sertifikat &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Cert 2 -->
+        <div onclick="openCertModal('Belajar Fundamental Front-End Web Development', 'Dicoding Academy Indonesia', '2023', 'DICODING-FE-88124', 'Kurikulum terakreditasi industri global. Mengembangkan aplikasi web modular berbasis komponen kustom, arsitektur single-page app (SPA), dan optimasi performa rendering.', ['Web Components', 'Custom Elements', 'Fetch API', 'Webpack', 'Shadow DOM'])" class="bg-white dark:bg-[#121E21] hover:bg-[#FDFEFE] dark:hover:bg-[#152529] rounded-2xl p-5 border border-gray-100 dark:border-[#1E3237] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 dark:bg-[#2DD4BF]/15 text-primary dark:text-[#2DD4BF] flex items-center justify-center">
+                <i class="fa-solid fa-certificate text-lg"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-full">Frontend</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-gray-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-[#2DD4BF] transition-colors leading-snug">
+              Belajar Fundamental Front-End Web Development
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-slate-400 mt-2">Dicoding Academy Indonesia</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100 dark:border-[#1E3237] flex items-center justify-between text-xs">
+            <span class="text-[11px] font-semibold text-gray-400 dark:text-slate-500"><i class="fa-regular fa-calendar mr-1"></i> 2023</span>
+            <span class="font-bold text-primary dark:text-[#2DD4BF] text-[11px]">Detail Sertifikat &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Cert 3 -->
+        <div onclick="openCertModal('Google UX Design Specialization', 'Google / Coursera', '2022', 'GGL-UX-990142', 'Program profesional 7 mata kuliah dari Google yang mencakup fondasi desain UX, empati pengguna, persona, information architecture, perancangan Figma, dan usability testing.', ['User Research', 'Wireframing', 'Figma', 'Usability Testing', 'Design System'])" class="bg-white dark:bg-[#121E21] hover:bg-[#FDFEFE] dark:hover:bg-[#152529] rounded-2xl p-5 border border-gray-100 dark:border-[#1E3237] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 dark:bg-[#2DD4BF]/15 text-primary dark:text-[#2DD4BF] flex items-center justify-center">
+                <i class="fa-solid fa-palette text-lg"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-full">UI/UX</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-gray-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-[#2DD4BF] transition-colors leading-snug">
+              Google UX Design Specialization
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-slate-400 mt-2">Google Career Certificates</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100 dark:border-[#1E3237] flex items-center justify-between text-xs">
+            <span class="text-[11px] font-semibold text-gray-400 dark:text-slate-500"><i class="fa-regular fa-calendar mr-1"></i> 2022</span>
+            <span class="font-bold text-primary dark:text-[#2DD4BF] text-[11px]">Detail Sertifikat &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Cert 4 -->
+        <div onclick="openCertModal('UI/UX Design Masterclass & Prototyping', 'BuildWithAngga', '2022', 'BWA-UIUX-5521', 'Pelatihan intensif perancangan produk digital berskala industri dengan arsitektur design system modular, auto-layout canggih, dan interaksi prototipe interaktif.', ['Design System', 'Auto Layout Figma', 'Micro-interactions', 'Design Handoff'])" class="bg-white dark:bg-[#121E21] hover:bg-[#FDFEFE] dark:hover:bg-[#152529] rounded-2xl p-5 border border-gray-100 dark:border-[#1E3237] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 dark:bg-[#2DD4BF]/15 text-primary dark:text-[#2DD4BF] flex items-center justify-center">
+                <i class="fa-solid fa-layer-group text-lg"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-full">Product Design</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-gray-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-[#2DD4BF] transition-colors leading-snug">
+              UI/UX Design Masterclass &amp; Prototyping
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-slate-400 mt-2">BuildWithAngga</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100 dark:border-[#1E3237] flex items-center justify-between text-xs">
+            <span class="text-[11px] font-semibold text-gray-400 dark:text-slate-500"><i class="fa-regular fa-calendar mr-1"></i> 2022</span>
+            <span class="font-bold text-primary dark:text-[#2DD4BF] text-[11px]">Detail Sertifikat &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Cert 5 -->
+        <div onclick="openCertModal('Belajar Dasar Pemrograman JavaScript', 'Dicoding Academy Indonesia', '2022', 'DICODING-JS-33108', 'Penguasaan konsep inti JavaScript modern, struktur data komprehensif, paradigma OOP dan fungsional, penanganan asynchronous, dan unit testing otomatis.', ['OOP JavaScript', 'Functional JS', 'Async/Await', 'Jest Testing'])" class="bg-white dark:bg-[#121E21] hover:bg-[#FDFEFE] dark:hover:bg-[#152529] rounded-2xl p-5 border border-gray-100 dark:border-[#1E3237] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 dark:bg-[#2DD4BF]/15 text-primary dark:text-[#2DD4BF] flex items-center justify-center">
+                <i class="fa-brands fa-js text-lg"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-full">Programming</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-gray-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-[#2DD4BF] transition-colors leading-snug">
+              Belajar Dasar Pemrograman JavaScript
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-slate-400 mt-2">Dicoding Academy Indonesia</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100 dark:border-[#1E3237] flex items-center justify-between text-xs">
+            <span class="text-[11px] font-semibold text-gray-400 dark:text-slate-500"><i class="fa-regular fa-calendar mr-1"></i> 2022</span>
+            <span class="font-bold text-primary dark:text-[#2DD4BF] text-[11px]">Detail Sertifikat &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Cert 6 -->
+        <div onclick="openCertModal('Database Design & SQL Specialist', 'Digital Talent Scholarship - Kominfo', '2023', 'DTS-KOMINFO-4402', 'Pelatihan pemodelan skema relasional, optimasi query kompleks, normalisasi tingkat 3NF, pembuatan relasi antar tabel, dan optimasi query tingkat lanjut.', ['Relational Schema', 'Query Optimization', 'Database Normalization', 'Index Tuning'])" class="bg-white dark:bg-[#121E21] hover:bg-[#FDFEFE] dark:hover:bg-[#152529] rounded-2xl p-5 border border-gray-100 dark:border-[#1E3237] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 dark:bg-[#2DD4BF]/15 text-primary dark:text-[#2DD4BF] flex items-center justify-center">
+                <i class="fa-solid fa-database text-lg"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-full">Database</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-gray-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-[#2DD4BF] transition-colors leading-snug">
+              Database Design &amp; SQL Specialist
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-slate-400 mt-2">DTS Kominfo</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100 dark:border-[#1E3237] flex items-center justify-between text-xs">
+            <span class="text-[11px] font-semibold text-gray-400 dark:text-slate-500"><i class="fa-regular fa-calendar mr-1"></i> 2023</span>
+            <span class="font-bold text-primary dark:text-[#2DD4BF] text-[11px]">Detail Sertifikat &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. MY ACTIVITIES                             -->
+  <!-- ========================================== -->
+  <section id="proyek" class="py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Sub-bab Header tanpa strip -->
+      <div class="mb-6">
+        <h2 class="text-xs font-extrabold tracking-[0.25em] text-primary dark:text-[#2DD4BF] uppercase">MY ACTIVITIES</h2>
+      </div>
+
+      <!-- ========================================== -->
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Project 1 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="KAH Tour" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Nama kegiatan</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">deskripsi kegiatan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80" alt="Mobile App" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Nama kegiatan</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">deskripsi kegiatan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Social Media" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Nama kegiatan</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">deskripsi kegiatan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=800&q=80" alt="Branding" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Nama kegiatan</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">deskripsi kegiatan</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <br>
+      <!-- ========================================== -->
+      <br>
+
+         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Project 1 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="KAH Tour" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Nama kegiatan</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">deskripsi kegiatan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80" alt="Mobile App" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Nama kegiatan</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">deskripsi kegiatan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Social Media" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100">Nama kegiatan</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">deskripsi kegiatan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="bg-white dark:bg-[#121E21] rounded-2xl border border-gray-100 dark:border-[#1E3237] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=800&q=80" alt="Branding" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[13.5px] font-extrabold text-gray-800 dark:text-slate-100"></h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400 mt-1.5 line-clamp-2">deskripsi kegiatan</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ========================================== -->
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 8. CONTACT ME (2 KOLOM)                    -->
+  <!-- ========================================== -->
+  <section id="kontak" class="py-14">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Info Kontak Kiri -->
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Sub-bab Header tanpa strip -->
+          <div>
+            <h2 class="text-xs font-extrabold tracking-[0.25em] text-primary dark:text-[#2DD4BF] uppercase">CONTACT ME</h2>
+          </div>
+
+          <div class="space-y-4">
+            <a href="mailto:wildan@gmail.com" class="flex items-center gap-3.5 text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-[#2DD4BF] transition-colors">
+              <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+                <i class="fa-solid fa-envelope text-xs"></i>
+              </div>
+              <span class="text-xs sm:text-[13px] font-medium">2045wildan@gmail.com</span>
+            </a>
+
+            <a href="https://instagram.com/@wdnhi_" target="_blank" class="flex items-center gap-3.5 text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-[#2DD4BF] transition-colors">
+              <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+                <i class="fa-brands fa-instagram text-xs"></i>
+              </div>
+              <span class="text-xs sm:text-[13px] font-medium">@wdnhi_</span>
+            </a>
+
+            <a href="https://linkedin.com/in/wildan-hibatulloh" target="_blank" class="flex items-center gap-3.5 text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-[#2DD4BF] transition-colors">
+              <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+                <i class="fa-brands fa-linkedin-in text-xs"></i>
+              </div>
+              <span class="text-xs sm:text-[13px] font-medium">wildan-hibatulloh</span>
+            </a>
+
+            <a href="https://wa.me/085822545821" target="_blank" class="flex items-center gap-3.5 text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-[#2DD4BF] transition-colors">
+              <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+                <i class="fa-brands fa-whatsapp text-xs"></i>
+              </div>
+              <span class="text-xs sm:text-[13px] font-medium">+62 858-2254-5821</span>
+            </a>
+
+            <div class="flex items-center gap-3.5 text-gray-700 dark:text-slate-300">
+              <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+                <i class="fa-solid fa-location-dot text-xs"></i>
+              </div>
+              <span class="text-xs sm:text-[13px] font-medium">Yogyakarta, Indonesia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Let's Work Together -->
+        <div class="lg:col-span-7 lg:border-l lg:border-gray-200 dark:lg:border-[#1E3237] lg:pl-12 space-y-4">
+          <span class="text-[11px] font-extrabold tracking-[0.25em] text-gray-400 dark:text-slate-500 uppercase block">GET IN TOUCH</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-primary dark:text-[#2DD4BF] tracking-tight leading-[1.1]">
+            LET'S WORK<br />TOGETHER
+          </h2>
+          <p class="text-[13.5px] leading-relaxed text-gray-600 dark:text-slate-300 max-w-lg">
+            Saya terbuka untuk kolaborasi, proyek, atau peluang kerja baru. Jangan ragu untuk menghubungi saya.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-3">
+            <a href="https://wa.me/085822545821" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark dark:bg-[#137482] dark:hover:bg-primary text-white text-xs font-bold tracking-wider uppercase px-6 py-3 rounded-full transition-all shadow-sm">
+              <span>SEND MESSAGE</span>
+              <i class="fa-solid fa-paper-plane text-xs"></i>
+            </a>
+            <a href="#beranda" class="inline-flex items-center gap-2 border-2 border-primary dark:border-[#2DD4BF] hover:bg-primary/5 dark:hover:bg-[#2DD4BF]/10 text-primary dark:text-[#2DD4BF] text-xs font-bold tracking-wider uppercase px-6 py-2.5 rounded-full transition-all">
+              <span>BERANDA</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 9. FOOTER                                  -->
+  <!-- ========================================== -->
+  <footer class="border-t border-gray-100 dark:border-[#1A2E33] py-8 bg-[#F8FAF9] dark:bg-[#0B1315] transition-colors">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div class="flex items-center gap-2.5">
+      <div class="flex flex-col -space-y-0.5">
+        <div class="flex items-center">
+          <!-- Gambar untuk Mode Terang (Light Mode) -->
+          <img 
+            src="/src/assets/images/wilba_ht.jpg" 
+            alt="Wilba Studio" 
+            class="h-12 sm:h-14 w-auto block dark:hidden hover:opacity-90 transition-opacity" 
+          />
+
+          <!-- Gambar untuk Mode Gelap (Dark Mode) -->
+          <img 
+            src="/src/assets/images/wilba_pth.jpg" 
+            alt="Wilba Studio" 
+            class="h-12 sm:h-14 w-auto hidden dark:block hover:opacity-90 transition-opacity" 
+          />
+        </div>
+      </div>
+      </div>
+      <p class="text-xs text-gray-400 dark:text-slate-500">&copy; 2026 Wildan Hibatulloh &bull; All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- Modal Detail Sertifikat -->
+  <div id="certModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="bg-white dark:bg-[#121E21] rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-gray-100 dark:border-[#1E3237] relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeCertModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 dark:text-slate-400 dark:hover:text-white p-1 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="flex items-start gap-4 mb-5 pr-8">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-[#2DD4BF]/15 text-primary dark:text-[#2DD4BF] flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-award text-2xl"></i>
+        </div>
+        <div>
+          <h3 id="modalCertTitle" class="text-lg font-extrabold text-gray-900 dark:text-slate-100 leading-snug">Judul Sertifikat</h3>
+          <p id="modalCertIssuer" class="text-xs text-gray-500 dark:text-slate-400 mt-1">Penerbit</p>
+        </div>
+      </div>
+
+      <div class="bg-[#F8FAF9] dark:bg-[#162529] rounded-2xl p-4 border border-gray-100 dark:border-[#22393F] space-y-2 mb-4 text-xs">
+        <div class="flex justify-between pb-2 border-b border-gray-200 dark:border-[#22393F]">
+          <span class="text-gray-500 dark:text-slate-400">ID Kredensial</span>
+          <span id="modalCertCode" class="font-mono font-bold text-primary dark:text-[#2DD4BF]">CODE</span>
+        </div>
+        <div class="flex justify-between pb-2 border-b border-gray-200 dark:border-[#22393F]">
+          <span class="text-gray-500 dark:text-slate-400">Tahun</span>
+          <span id="modalCertYear" class="font-bold text-gray-700 dark:text-slate-200">2023</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500 dark:text-slate-400">Status</span>
+          <span class="font-bold text-emerald-600 dark:text-emerald-400"><i class="fa-solid fa-circle-check"></i> Terverifikasi</span>
+        </div>
+      </div>
+
+      <div class="space-y-1 mb-4">
+        <h4 class="text-xs font-bold uppercase text-gray-700 dark:text-slate-300">Deskripsi Pelatihan</h4>
+        <p id="modalCertDesc" class="text-xs leading-relaxed text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-[#152529] p-3 rounded-xl border border-gray-100 dark:border-[#22393F]"></p>
+      </div>
+
+      <div class="space-y-2 mb-5">
+        <h4 class="text-xs font-bold uppercase text-gray-700 dark:text-slate-300">Kompetensi yang Dipelajari</h4>
+        <div id="modalCertSkills" class="flex flex-wrap gap-1.5"></div>
+      </div>
+
+      <button onclick="closeCertModal()" class="w-full bg-primary hover:bg-primary-dark dark:bg-[#137482] text-white text-xs font-bold py-2.5 rounded-xl transition-colors cursor-pointer">
+        Tutup
+      </button>
+    </div>
+  </div>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    function updateThemeUI(isDark) {
+      const root = document.documentElement;
+      const themeIcon = document.getElementById('themeIcon');
+      const themeText = document.getElementById('themeText');
+      
+      if (isDark) {
+        root.classList.add('dark');
+        localStorage.setItem('wildan_theme', 'dark');
+        if (themeIcon) themeIcon.className = 'fa-solid fa-sun text-amber-400';
+        if (themeText) themeText.textContent = 'LIGHT';
+      } else {
+        root.classList.remove('dark');
+        localStorage.setItem('wildan_theme', 'light');
+        if (themeIcon) themeIcon.className = 'fa-solid fa-moon text-primary';
+        if (themeText) themeText.textContent = 'DARK';
+      }
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      updateThemeUI(!isDark);
+    }
+
+    function openCertModal(title, issuer, year, code, desc, skills) {
+      document.getElementById('modalCertTitle').textContent = title;
+      document.getElementById('modalCertIssuer').textContent = issuer;
+      document.getElementById('modalCertYear').textContent = year;
+      document.getElementById('modalCertCode').textContent = code;
+      document.getElementById('modalCertDesc').textContent = desc;
+
+      const skillsContainer = document.getElementById('modalCertSkills');
+      skillsContainer.innerHTML = '';
+      skills.forEach(skill => {
+        const span = document.createElement('span');
+        span.className = 'text-[10px] font-medium bg-primary-light dark:bg-[#163036] text-primary dark:text-[#2DD4BF] px-2.5 py-1 rounded-md';
+        span.textContent = skill;
+        skillsContainer.appendChild(span);
+      });
+
+      document.getElementById('certModal').classList.remove('hidden');
+    }
+
+    function closeCertModal() {
+      document.getElementById('certModal').classList.add('hidden');
+    }
+
+    (function initTheme() {
+      const savedTheme = localStorage.getItem('wildan_theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+      updateThemeUI(isDark);
+    })();
+  </script>
+
+</body>
+</html>
